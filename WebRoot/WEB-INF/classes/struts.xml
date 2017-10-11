@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apche.org/dtds/struts-2.1.dtd">
+	<struts>
+	<package  name="pzlpzl" extends="struts-default">
+	
+	<!-- 登录 -->
+	  <action name="loginAction" class="loginAction.LoginAction">
+	    <result name="success">/success/success.jsp</result>
+	    <result name="SAdmin">/success/SAdmin.jsp</result>
+	     <result name="input">/login/login.jsp</result>
+	    <result name="error">/login/login.jsp</result>
+	  </action>
+	<!-- 添加管理员 -->
+	<action name="AddAdminAction" class="adminAction.AddAdminAction">
+	    <result name="success">LookMessageAction</result>	   
+	     <result name="input">/admin/addAdmin.jsp</result>
+	    <result name="error">/admin/addAdmin.jsp</result>  
+	  </action>
+	  <!-- 查看管理员 -->
+	  <action name="LookMessageAction" class="adminAction.LookMessageAction">
+	    <result name="success">/admin/showAdmin.jsp</result>	   
+	     <result name="input">/success/SAdmin.jsp</result> 
+	  </action>
+	  <!-- 修改管理员 -->
+	  <action name="UpdateMessageAction" class="adminAction.UpdateMessageAction">
+	    <result name="success">LookMessageAction</result>	   
+	     <result name="input">/success/SAdmin.jsp</result> 
+	  </action>
+	  <!-- 删除管理员 -->
+	  <action name="DeleteMessageAction" class="adminAction.DeleteMessageAction">
+	    <result name="success" type="chain">LookMessageAction</result>	   
+	     <result name="input">/success/SAdmin.jsp</result> 
+	  </action>
+	  
+	  <!-- 添加people -->
+	<action name="AddpeopleAction" class="peopleAction.AddpeopleAction">
+	    <result name="success" type="chain">LookPeopleAction</result>	   
+	     <result name="input">/success/success.jsp</result>	    
+	  </action>
+	  
+	 <!-- 查看people -->
+	  <action name="LookPeopleAction" class="peopleAction.LookpeopleAction">
+	    <result name="success">/people/showPeople.jsp</result>	   
+	     <result name="input">/success/success.jsp</result> 
+	  </action>
+	  
+	  <!-- 查看people1 -->
+	  <action name="LookPeopleAction1" class="peopleAction.LookpeopleAction">
+	    <result name="success">/people1/showPeople.jsp</result>	   
+	     <result name="input">/success/success.jsp</result> 
+	  </action>
+	  	  
+	  	  <!-- 修改people -->
+	  <action name="updatepeopleAction" class="peopleAction.UpdatepeopleAction">
+	    <result name="success" type="chain">LookPeopleAction</result>	   
+	     <result name="input">/success/success.jsp</result> 
+	  </action>
+	  
+	  <!-- 删除peopele -->
+	  <action name="DeletePeopleAction" class="peopleAction.DeletepeopleAction">
+	    <result name="success" type="chain">LookPeopleAction</result>	   
+	     <result name="input">/success/success.jsp</result> 
+	  </action>
+	  
+	    <!-- 添加book -->
+	<action name="AddbookAction" class="bookAction.AddbookAction">
+	   <interceptor-ref name = "fileUpload">
+        	<param name="maximumSize">10000000</param>  
+        	<param name="allowedTypes">img/gif,image/png,image/jpeg,image/jpg,image/pjpeg</param>  
+        </interceptor-ref>  
+        <interceptor-ref name="defaultStack"/>
+            <param name="savePath">./save</param> 
+            
+	    <result name="success" type="chain">LookBookAction</result>	   
+	     <result name="input">/success/success.jsp</result>	    
+	  </action>
+	  
+	  <!-- 查看book -->
+	  <action name="LookBookAction" class="bookAction.LookbookAction">
+	    <result name="success">/book/showBook.jsp</result>	   
+	     <result name="input">/success/success.jsp</result> 
+	  </action>
+	  
+	   <!-- 查看book1 -->
+	  <action name="LookBookAction1" class="bookAction.LookbookAction">
+	    <result name="success">/book1/showBook.jsp</result>	   
+	     <result name="input">/success/success.jsp</result> 
+	  </action>
+	  
+	   <!-- 修改book -->
+	  <action name="UpdatepeopleAction" class="bookAction.UpdatebookAction">
+	    <result name="success" type="chain">LookBookAction</result>	   
+	     <result name="input">/success/success.jsp</result> 
+	  </action> 
+	  
+	   <!-- 删除book -->
+	  <action name="DeleteBookAction" class="bookAction.DeletebookAction">
+	    <result name="success" type="chain">LookBookAction</result>	   
+	     <result name="input">/success/success.jsp</result> 
+	  </action> 
+	  
+	  <!-- 借书 -->
+	  <action name="BorrowAction" class="borrowreturn.Borrow">
+	    <result name="success" type="chain">LookBookAction</result>	   
+	     <result name="input">/success/success.jsp</result> 
+	  </action> 
+	  
+	  <!-- 查看借阅记录 -->
+	  <action name="LookRecordAction" class="borrowreturn.LookrecordAction">
+	    <result name="success">/borrowreturn/showRecord.jsp</result>	   
+	     <result name="input">/success/success.jsp</result> 
+	  </action>
+	  
+	  <!-- 查看借阅记录1 -->
+	  <action name="LookRecordAction1" class="borrowreturn.LookrecordAction">
+	    <result name="success">/borrowreturn/showRecord.jsp</result>	   
+	     <result name="input">/success/success.jsp</result> 
+	  </action>
+	  
+	  <!-- 还书 -->
+	  <action name="ReturnAction" class="borrowreturn.Return">
+	    <result name="success" type="chain">LookBookAction</result>	   
+	     <result name="input">/success/success.jsp</result> 
+	  </action> 
+	</package>
+	</struts>

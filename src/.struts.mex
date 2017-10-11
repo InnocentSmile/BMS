@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="pzlpzl" location="0,0" size="300,100">
+    <action name="loginAction" location="10,20" size="100,50" />
+    <action name="AddAdminAction" location="10,20" size="100,50" />
+    <action name="LookMessageAction" location="10,20" size="100,50" />
+    <action name="UpdateMessageAction" location="10,20" size="100,50" />
+    <action name="DeleteMessageAction" location="10,20" size="100,50" />
+    <action name="AddpeopleAction" location="10,20" size="100,50" />
+    <action name="LookPeopleAction" location="10,20" size="100,50" />
+    <action name="updatepeopleAction" location="10,20" size="100,50" />
+    <action name="DeletePeopleAction" location="10,20" size="100,50" />
+    <action name="AddbookAction" location="10,20" size="100,50" />
+    <action name="LookBookAction" location="10,20" size="100,50" />
+    <action name="UpdatepeopleAction" location="10,20" size="100,50" />
+    <action name="DeleteBookAction" location="10,20" size="100,50" />
+    <action name="BorrowAction" location="10,20" size="100,50" />
+    <action name="LookRecordAction" location="10,20" size="100,50" />
+    <action name="ReturnAction" location="10,20" size="100,50" />
+  </package>
+</Struts2Diagram>
+

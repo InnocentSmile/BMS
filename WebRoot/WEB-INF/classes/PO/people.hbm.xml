@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+  <hibernate-mapping>
+  
+  <class name="PO.peoplePO" table="people" catalog="test">
+     <id name="id" type="string">
+     <column name="id" length="20"/>
+     <generator class="assigned"/>
+     </id>
+     
+     <property name="name" type="string">
+      <column name="name" length="30" not-null="true"/>
+     </property>
+     
+    <property name="sex" type="string">
+      <column name="sex" length="30" not-null="true"/>
+     </property>
+     
+     <property name="phone" type="string">
+      <column name="phone" length="30" not-null="true"/>
+     </property>
+     
+      <property name="address" type="string">
+      <column name="address" length="30" not-null="true"/>
+     </property>
+     
+     
+  </class>   
+  </hibernate-mapping>       
